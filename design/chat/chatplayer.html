@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trivia Night: Science Edition - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#efdbff",
+              "on-secondary-fixed-variant": "#68379d",
+              "tertiary": "#9d365d",
+              "primary": "#644da1",
+              "background": "#fdf3ff",
+              "primary-fixed": "#bba2fd",
+              "on-secondary-fixed": "#4a147e",
+              "surface-variant": "#ebd4ff",
+              "on-tertiary-container": "#640432",
+              "secondary-container": "#e3c6ff",
+              "surface-tint": "#644da1",
+              "on-error-container": "#510017",
+              "on-tertiary": "#ffeff1",
+              "on-primary-container": "#381e72",
+              "on-tertiary-fixed-variant": "#70103a",
+              "error-dim": "#a70138",
+              "tertiary-dim": "#8e2951",
+              "tertiary-fixed": "#ff8eb2",
+              "primary-fixed-dim": "#ad95ef",
+              "tertiary-container": "#ff8eb2",
+              "on-primary": "#f7f0ff",
+              "surface-dim": "#e5caff",
+              "surface-container-highest": "#ebd4ff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-dim": "#67369c",
+              "on-surface-variant": "#67537c",
+              "error": "#b41340",
+              "on-secondary-container": "#5e2d93",
+              "secondary": "#7343a9",
+              "on-primary-fixed-variant": "#41297c",
+              "on-background": "#38264c",
+              "tertiary-fixed-dim": "#f67ca4",
+              "primary-container": "#bba2fd",
+              "outline": "#836e99",
+              "surface-container-low": "#f9ecff",
+              "error-container": "#f74b6d",
+              "on-secondary": "#faefff",
+              "on-error": "#ffefef",
+              "on-surface": "#38264c",
+              "secondary-fixed": "#e3c6ff",
+              "outline-variant": "#bba4d2",
+              "on-primary-fixed": "#1e0053",
+              "inverse-primary": "#bba2fd",
+              "secondary-fixed-dim": "#d9b5ff",
+              "inverse-surface": "#16052a",
+              "surface-bright": "#fdf3ff",
+              "surface-container": "#f3e2ff",
+              "surface": "#fdf3ff",
+              "primary-dim": "#584194",
+              "inverse-on-surface": "#ab94c1",
+              "on-tertiary-fixed": "#380018"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #bba4d240; border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#fdf3ff] dark:bg-purple-950 flex items-center justify-between px-6 py-4 w-full sticky top-0 z-50 tonal-shift bg-[#f9ecff] dark:bg-purple-900/50 relative">
+<div class="flex items-center gap-4">
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold text-2xl tracking-tight text-[#644da1] dark:text-[#bba2fd] absolute left-1/2 -translate-x-1/2">Quiz Subject</h1>
+</div>
+<div class="flex items-center gap-2 ml-auto">
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                LIVE
+            </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col w-full max-w-4xl mx-auto px-4 py-6 mb-24 overflow-hidden">
+<!-- Chat Area -->
+<div class="flex-1 overflow-y-auto flex flex-col gap-6 pr-2">
+<!-- Host Announcement -->
+<div class="flex justify-center my-4">
+<div class="bg-surface-container-high rounded-lg px-4 py-2 text-center max-w-[80%]">
+<p class="text-label-md font-semibold text-secondary uppercase tracking-widest text-[10px] mb-1">System Update</p>
+<p class="text-on-surface text-sm">Welcome to the Science Edition! The quiz starts in 3 minutes.</p>
+</div>
+</div>
+<!-- Message: Player Left -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden bg-surface-container-highest">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of a young player" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBush7UVETcEDZrDvIrcq-nz3Hny8fiGoIUPGqI8fUfExbfsPZRvwk9sodMo-OUMfHvtP628ZpLQL1SjjUyVo6FzhEYpqYR4XNaIQ13oShxmfnLQFVXq8d4eOMAv8evoDbsz1Dl7SbV33ASW6RXLBkx625cb71JeEddsinwrBjsgXBmdots84GFgbZ_oy1AUmsYHSAfkk_Ob2xLJ7TtPKCgSRtoqpwzUoILBrMupq5IMq0asMLtbipbt8nR4SVdD1l_eNmMiildGftD"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-on-surface-variant ml-2">SpaceExplorer_99</span>
+<div class="bg-surface-container-low text-on-surface px-5 py-3 rounded-tr-lg rounded-tl-lg rounded-br-lg shadow-sm">
+<p class="text-body-lg">Anyone knows if physics questions are included today? 🪐</p>
+</div>
+</div>
+</div>
+<!-- Message: Host (The Authority) -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden ring-2 ring-primary p-0.5">
+<img alt="Host Avatar" class="w-full h-full object-cover rounded-full" data-alt="Avatar of a scientific professor host" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCArbDfqr6PJXJJZgOu7B45eawW_oVt9DQnFEfBYUv9nPUoAqLibpIcxWNxdtzvQeIRkGSET8pXVsCE3d4bjb0Qn1oQuvpifdsLClNVKZAZNXGmGHFlN8ZloU7WTF1K615670u0LX3zypWcLJ4bK1cp4jxRWp__aqpFijILgE76yTmrFwSKXpCr0rune-u1DZSxipzkDTTfolyYxFlgE-fDuLN-UTc09VZGB06yKeO33Dvii8Wv6CpaFebsvek740kNfPNtG_pOWh4q"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 ml-2">
+<span class="text-xs font-extrabold text-primary">Dr. Quantum</span>
+<span class="bg-primary text-on-primary text-[9px] px-1.5 py-0.5 rounded font-black tracking-tighter uppercase">Host</span>
+</div>
+<div class="bg-primary-container text-on-primary-container px-5 py-3 rounded-tr-lg rounded-tl-lg rounded-br-lg border-l-4 border-primary shadow-sm">
+<p class="text-body-lg font-medium">Indeed! Expect 5 questions on Quantum Mechanics and Relativity. Be prepared!</p>
+</div>
+</div>
+</div>
+<!-- Message: You (Aligned Right) -->
+<div class="flex items-end gap-3 max-w-[85%] self-end flex-row-reverse">
+<div class="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden bg-primary shadow-md">
+<img alt="My Avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of the current user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPzoO06KXcp2Wq1rSu4Rj5XNUVzNR-uTWQLplZEwM0Qxy1GNH1K-PBYvKpG5vmRM-IRCYJc8HDIi8NvqXFAWoscJVgpAWvt-ZX0_c2T9WIdk22x2raPxoc56046uOvl8g_hYRtQ60bIs7kX__04XvFUHZML5eiKwms8mci8YtTJ7wvEmPidcTepaWnpajBRP0Ls8m_0uFYWS6D8N09bEmwbmcyfL-eHQMGgtA80pTg1nAnFxYOdoikHkC9oEsTgbZsNztDVB9W-gXX"/>
+</div>
+<div class="flex flex-col gap-1 items-end">
+<span class="text-xs font-bold text-primary mr-2">You</span>
+<div class="bg-primary text-on-primary px-5 py-3 rounded-tr-lg rounded-tl-lg rounded-bl-lg shadow-md">
+<p class="text-body-lg">Oh boy... I should've studied more than just biology! 😂</p>
+</div>
+</div>
+</div>
+<!-- Message: Another Player -->
+<div class="flex items-end gap-3 max-w-[85%]">
+<div class="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden bg-surface-container-highest">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Cartoon avatar of a female player" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy26GbvizuHDDBKeTehOXd2Dfo5cSQmS3Ol6IRu1R9L5kHbuMMDEA131WkCZ8z9IPoodA9VYVfb3gjr-6NbHcK8dTWS-cW7kwabOHhEYJjN0UohC4BIEIvdAZ4axLmdS4wr7ZjrV5FYS4mpl3M1mPmxkuC4W_Yt2qDhLRO4AZ-YnfmNN7eHnwCZIE4id0B2a2Iue0QAYSuOGZF884z2rJi3TAiFbM4rLLcCgpbhqS872EXiNQY4qlaN9j4c2OTN3F3HmG1neNpbKJJ"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-on-surface-variant ml-2">Luna_Nova</span>
+<div class="bg-surface-container-low text-on-surface px-5 py-3 rounded-tr-lg rounded-tl-lg rounded-br-lg shadow-sm">
+<p class="text-body-lg">Good luck everyone! May the force (and physics) be with us.</p>
+</div>
+</div>
+</div>
+<!-- Message: You (Again) -->
+<div class="flex items-end gap-3 max-w-[85%] self-end flex-row-reverse">
+<div class="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden bg-primary shadow-md">
+<img alt="My Avatar" class="w-full h-full object-cover" data-alt="Avatar of the user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZM2ObyAahdFE_j1m3XTUFFmY_4ZdkxRf1G1N1Wzs9inz16-OalXj1TE1IuRsg2knq2BcaAGLjbFUqNJACrRhl5jQbog7Mc6YsNmJPAM8SNmsnfaTikW0w-6mGiQO6uuHcDV7pzkSUyYdWPtcy7G-0HgMqnCsWk6JMA1pEauPYfCozUehYmcYJ4TeHo_UITWj7OqHXK9pNBfoiJSdUudjxYTUhICWa_U3TUlB-GKOoUSQNS-eC3NIRsrdfUaPzpvCUGn6bBncgQdHx"/>
+</div>
+<div class="flex flex-col gap-1 items-end">
+<span class="text-xs font-bold text-primary mr-2">You</span>
+<div class="bg-primary text-on-primary px-5 py-3 rounded-tr-lg rounded-tl-lg rounded-bl-lg shadow-md">
+<p class="text-body-lg">Ready when you are!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Chat Input Area -->
+<div class="mt-auto pt-4 bg-background">
+<div class="relative flex items-center gap-3 bg-surface-container-highest rounded-full px-5 py-2 ring-1 ring-inset ring-outline/10 focus-within:ring-2 focus-within:ring-primary transition-all">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface placeholder-on-surface-variant/60 font-body text-md py-3" placeholder="Type a message..." type="text"/>
+<button class="bg-primary text-on-primary w-10 h-10 flex items-center justify-center rounded-full active:scale-90 transition-all shadow-lg">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fdf3ff]/80 dark:bg-purple-950/80 backdrop-blur-xl rounded-t-[3rem] border-t border-[#bba4d2]/15 shadow-[0_-12px_48px_rgba(56,38,76,0.06)]">
+<!-- Lobby Link (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#bba4d2] px-5 py-2 active:scale-90 transition-all duration-300 ease-out hover:text-[#644da1] dark:hover:text-[#ebd4ff]" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-wider mt-1">Lobby</span>
+</a>
+<!-- Chat Link (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#ebd4ff] dark:bg-[#644da1] text-[#644da1] dark:text-[#ffffff] rounded-2xl px-8 py-2 active:scale-90 transition-all duration-300 ease-out shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-wider mt-1">Chat</span>
+</a>
+<!-- Manage Link (Inactive) -->
+</nav>
+</body></html>

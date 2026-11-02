@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Quiz - Enter Nickname</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#bba2fd",
+              "surface": "#fdf3ff",
+              "tertiary": "#9d365d",
+              "on-primary-fixed": "#1e0053",
+              "on-primary-fixed-variant": "#41297c",
+              "on-background": "#38264c",
+              "outline-variant": "#bba4d2",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#ebd4ff",
+              "tertiary-fixed-dim": "#f67ca4",
+              "on-surface-variant": "#67537c",
+              "on-error-container": "#510017",
+              "primary-dim": "#584194",
+              "on-error": "#ffefef",
+              "surface-container-high": "#efdbff",
+              "tertiary-fixed": "#ff8eb2",
+              "tertiary-dim": "#8e2951",
+              "inverse-on-surface": "#ab94c1",
+              "inverse-surface": "#16052a",
+              "error-dim": "#a70138",
+              "error": "#b41340",
+              "on-secondary-container": "#5e2d93",
+              "on-tertiary-container": "#640432",
+              "surface-bright": "#fdf3ff",
+              "on-primary": "#f7f0ff",
+              "primary": "#644da1",
+              "on-primary-container": "#381e72",
+              "primary-fixed-dim": "#ad95ef",
+              "outline": "#836e99",
+              "surface-container": "#f3e2ff",
+              "tertiary-container": "#ff8eb2",
+              "secondary-container": "#e3c6ff",
+              "surface-dim": "#e5caff",
+              "on-surface": "#38264c",
+              "on-secondary": "#faefff",
+              "secondary-dim": "#67369c",
+              "background": "#fdf3ff",
+              "secondary-fixed": "#e3c6ff",
+              "on-secondary-fixed": "#4a147e",
+              "inverse-primary": "#bba2fd",
+              "on-tertiary": "#ffeff1",
+              "primary-fixed": "#bba2fd",
+              "on-tertiary-fixed-variant": "#70103a",
+              "surface-variant": "#ebd4ff",
+              "error-container": "#f74b6d",
+              "on-tertiary-fixed": "#380018",
+              "on-secondary-fixed-variant": "#68379d",
+              "secondary": "#7343a9",
+              "surface-tint": "#644da1",
+              "secondary-fixed-dim": "#d9b5ff",
+              "surface-container-low": "#f9ecff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#fdf3ff] dark:bg-[#1c1b1f] flex justify-between items-center w-full px-4 h-16 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzAJH8xtfGKkaBFwldhtT4GDxE-3oP7jd9-7otO-u-VbpmtONwTPoe9JAW9oaj8BveBpcWezBHQg-1WvnvnYjs4f7D65Idwtb8T2hJnceIfhLjmyFgsv-Nm6ylXfU56FgdzWiVzQiafQW8ptrkJ74O_6OJELjdjhtrb3RmA5adhx2b5JqnAnwcW9Cdn7LspP3vCNfDQUVdjQ-YO4Vo7tOp8zmE8jVb08Jn_BYCbeLmxnIXR60679vCG5fz193NZ_u6OAzGmYR716NY"/>
+</div>
+<span class="text-[#6750A4] dark:text-[#d0bcff] font-['Plus_Jakarta_Sans'] font-bold text-xl tracking-tight">Kinetic Quiz</span>
+</div>
+<button class="text-[#6750A4] dark:text-[#d0bcff] font-['Plus_Jakarta_Sans'] font-bold text-sm px-4 py-2 rounded-full hover:bg-[#ebd4ff]/50 dark:hover:bg-[#4a4458]/50 transition-colors active:scale-95 duration-150">
+            Join Code
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-6 pt-20 pb-24">
+<div class="max-w-md w-full">
+<!-- Centered Nickname Card -->
+<div class="bg-surface-container-low rounded-xl p-8 md:p-12 shadow-[0_-4px_48px_0_rgba(56,38,76,0.06)] relative overflow-hidden">
+<!-- Decorative element -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="relative z-10 text-center mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-highest text-primary font-bold text-[0.65rem] tracking-[0.2em] uppercase rounded-full mb-4">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                        Code: 842 190
+                    </div>
+<h1 class="text-on-background font-headline font-extrabold text-3xl leading-tight">Enter Nickname</h1>
+</div>
+<div class="space-y-8 relative z-10">
+<!-- Input: Nickname -->
+<div class="space-y-2">
+<label class="block text-on-surface-variant font-label text-xs font-semibold ml-1 tracking-wide uppercase">Your Nickname</label>
+<div class="relative group">
+<input autofocus="" class="w-full bg-surface-container-highest border-none border-b-2 border-outline/20 focus:border-primary focus:ring-0 rounded-t-lg px-4 py-4 font-body font-medium text-on-surface placeholder:text-outline-variant/50 transition-all" placeholder="Enter a cool name" type="text"/>
+<div class="absolute bottom-0 left-0 w-full h-0.5 bg-outline/20 group-focus-within:bg-primary transition-all"></div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-5 rounded-lg flex items-center justify-center gap-3 shadow-lg shadow-primary/20 hover:bg-primary-dim active:scale-[0.98] transition-all duration-150 group">
+<span>JOIN GAME</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="sports_esports">sports_esports</span>
+</button>
+</div>
+<!-- Lobby Status -->
+</div>
+</div>
+</main>
+<!-- Optional Visual Texture -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-40">
+<div class="absolute top-[10%] left-[5%] w-96 h-96 bg-primary-container/30 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[10%] right-[5%] w-[30rem] h-[30rem] bg-secondary-container/20 rounded-full blur-[120px]"></div>
+</div>
+</body></html>

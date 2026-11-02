@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#e9ddff",
+              "surface": "#fdf3ff",
+              "tertiary": "#9d365d",
+              "on-primary-fixed": "#21005d",
+              "on-primary-fixed-variant": "#4f378b",
+              "on-background": "#1c1b1f",
+              "outline-variant": "#cac4d0",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e6e1e5",
+              "tertiary-fixed-dim": "#efb8c8",
+              "on-surface-variant": "#49454f",
+              "on-error-container": "#410002",
+              "primary-dim": "#d0bcff",
+              "on-error": "#ffffff",
+              "surface-container-high": "#ece6f0",
+              "tertiary-fixed": "#ffd9e3",
+              "tertiary-dim": "#efb8c8",
+              "inverse-on-surface": "#f4eff4",
+              "inverse-surface": "#313033",
+              "error-dim": "#f2b8b5",
+              "error": "#b3261e",
+              "on-secondary-container": "#1d192b",
+              "on-tertiary-container": "#31111d",
+              "surface-bright": "#fef7ff",
+              "on-primary": "#ffffff",
+              "primary": "#6750a4",
+              "on-primary-container": "#21005d",
+              "primary-fixed-dim": "#d0bcff",
+              "outline": "#79747e",
+              "surface-container": "#f3edf7",
+              "tertiary-container": "#ffd9e3",
+              "secondary-container": "#e8def8",
+              "surface-dim": "#ded8e1",
+              "on-surface": "#1c1b1f",
+              "on-secondary": "#ffffff",
+              "secondary-dim": "#ccc2dc",
+              "background": "#fef7ff",
+              "secondary-fixed": "#e8def8",
+              "on-secondary-fixed": "#1d192b",
+              "inverse-primary": "#d0bcff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#e9ddff",
+              "on-tertiary-fixed-variant": "#633b48",
+              "surface-variant": "#e7e0eb",
+              "error-container": "#f9dedc",
+              "on-tertiary-fixed": "#31111d",
+              "on-secondary-fixed-variant": "#4a4458",
+              "secondary": "#625b71",
+              "surface-tint": "#6750a4",
+              "secondary-fixed-dim": "#ccc2dc",
+              "surface-container-low": "#f7f2fa"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timer-svg {
+            transform: rotate(-90deg);
+        }
+        .timer-progress {
+            transition: stroke-dashoffset 1s linear;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen flex flex-col">
+<!-- Player Top Navigation -->
+<header class="bg-surface/80 backdrop-blur-md flex justify-between items-center w-full px-6 h-16 fixed top-0 z-50 border-b border-surface-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA38zyS-j2ag2GAA1neJ--0DWS4rM48lX0J4nVNKQ2EpWCtx97u5ibgjQxUeaaFA3d_FJiq1swD7ofPYxzuDy5uMH9KrADj5JO1LX4kZJpZah-EP7-RQS-PXVWqf76_OVRIFFOiJwdx4mR3tvVnQL_K9ISRKUUb6tO-lEHSTl4IzHfYwRf0sU8E_8lQIogjtO4D_QhHl3ghTvyXcB1QDtM6IDc9XZX1V_N1UXikllbJsf-V5rEsP1IADD0SvfqMXei8iz25jpN921HN" style=""/>
+</div>
+<h1 class="font-headline font-bold text-lg text-primary tracking-tight" style="">Kinetic Quiz</h1>
+</div>
+</header>
+<main class="flex-1 mt-16 mb-24 px-6 py-8 max-w-lg mx-auto w-full flex flex-col items-center">
+<!-- Real-time Countdown Timer -->
+<div class="relative w-40 h-40 mb-10 flex items-center justify-center">
+<svg class="timer-svg w-full h-full">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="none" r="72" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary timer-progress" cx="80" cy="80" fill="none" r="72" stroke="currentColor" stroke-dasharray="452.39" stroke-dashoffset="113.1" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline font-extrabold text-4xl text-on-background" style="">15</span>
+<span class="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant" style="">Seconds left</span>
+</div>
+</div>
+<!-- Current Question Section -->
+<div class="w-full bg-surface-container-lowest rounded-[2rem] p-8 mb-8 shadow-sm border border-surface-variant/20 relative overflow-hidden">
+<div class="flex items-center gap-2 mb-4">
+<span class="font-headline font-extrabold text-2xl text-primary" style="">04</span>
+<span class="font-label text-sm font-semibold text-on-surface-variant" style="">/ 10</span>
+</div>
+<h2 class="font-headline font-bold text-2xl text-on-background leading-tight" style="">
+            Which planet in our solar system is known as the Red Planet?
+        </h2>
+</div>
+<!-- Answer Options -->
+<div class="grid grid-cols-1 gap-4 w-full mb-10">
+<!-- Option 1 -->
+<button class="flex items-center justify-between w-full p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-200 border-2 border-transparent group" style="">
+<span class="font-body font-semibold text-lg text-on-surface" style="">Venus</span>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary transition-colors"></div>
+</button>
+<!-- Option 2 (Selected State) -->
+<button class="flex items-center justify-between w-full p-5 rounded-2xl bg-[#D0BCFF] text-on-primary-container border-2 border-primary transition-all duration-300 ring-4 ring-primary/10" style="">
+<span class="font-body font-bold text-lg" style="">Mars</span>
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-on-primary">
+<span class="material-symbols-outlined text-xl" style='font-variation-settings: "FILL" 1, "wght" 600;'>check</span>
+</div>
+</button>
+<!-- Option 3 -->
+<button class="flex items-center justify-between w-full p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-200 border-2 border-transparent group" style="">
+<span class="font-body font-semibold text-lg text-on-surface" style="">Jupiter</span>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary transition-colors"></div>
+</button>
+<!-- Option 4 -->
+<button class="flex items-center justify-between w-full p-5 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-200 border-2 border-transparent group" style="">
+<span class="font-body font-semibold text-lg text-on-surface" style="">Saturn</span>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary transition-colors"></div>
+</button>
+</div>
+<!-- Submitted Progress Section -->
+<div class="w-full bg-surface-container-low rounded-3xl p-6 border border-surface-variant/10">
+<div class="flex items-center justify-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-xl" style='font-variation-settings: "FILL" 1;'>hourglass_top</span>
+<p class="font-label font-bold text-on-surface" style="">Others are done answering</p>
+</div>
+<div class="w-full bg-surface-container-highest h-4 rounded-full overflow-hidden mb-3">
+<!-- Progress Bar -->
+<div class="h-full bg-primary rounded-full transition-all duration-700 ease-out shadow-sm" style="width: 75%"></div>
+</div>
+<div class="flex justify-between items-center px-1">
+<span class="font-label text-xs font-bold text-on-surface-variant" style="">18/24 participants done</span>
+<span class="font-label text-xs font-bold text-primary" style="">75%</span>
+</div>
+</div>
+</main>
+<!-- System Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff]/80 dark:bg-[#1a1120]/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-12px_48px_rgba(56,38,76,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#efdbff] dark:bg-[#4a345e] text-[#644da1] dark:text-[#ebd4ff] rounded-[2rem] px-5 py-2 transition-all" href="#" style="">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>quiz</span>
+<span class="font-['Manrope'] font-medium text-[12px] mt-1" style="">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#a694ba] px-5 py-2 hover:text-[#644da1] dark:hover:text-[#bba2fd] transition-colors" href="#" style="">
+<span class="material-symbols-outlined" style="">leaderboard</span>
+<span class="font-['Manrope'] font-medium text-[12px] mt-1" style="">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#a694ba] px-5 py-2 hover:text-[#644da1] dark:hover:text-[#bba2fd] transition-colors" href="#" style="">
+<span class="material-symbols-outlined" style="">forum</span>
+<span class="font-['Manrope'] font-medium text-[12px] mt-1" style="">Chat</span>
+</a>
+</nav>
+</body></html>

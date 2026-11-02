@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#bba2fd",
+              "surface": "#fdf3ff",
+              "tertiary": "#9d365d",
+              "on-primary-fixed": "#1e0053",
+              "on-primary-fixed-variant": "#41297c",
+              "on-background": "#38264c",
+              "outline-variant": "#bba4d2",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#ebd4ff",
+              "tertiary-fixed-dim": "#f67ca4",
+              "on-surface-variant": "#67537c",
+              "on-error-container": "#510017",
+              "primary-dim": "#584194",
+              "on-error": "#ffefef",
+              "surface-container-high": "#efdbff",
+              "tertiary-fixed": "#ff8eb2",
+              "tertiary-dim": "#8e2951",
+              "inverse-on-surface": "#ab94c1",
+              "inverse-surface": "#16052a",
+              "error-dim": "#a70138",
+              "error": "#b41340",
+              "on-secondary-container": "#5e2d93",
+              "on-tertiary-container": "#640432",
+              "surface-bright": "#fdf3ff",
+              "on-primary": "#f7f0ff",
+              "primary": "#644da1",
+              "on-primary-container": "#381e72",
+              "primary-fixed-dim": "#ad95ef",
+              "outline": "#836e99",
+              "surface-container": "#f3e2ff",
+              "tertiary-container": "#ff8eb2",
+              "secondary-container": "#e3c6ff",
+              "surface-dim": "#e5caff",
+              "on-surface": "#38264c",
+              "on-secondary": "#faefff",
+              "secondary-dim": "#67369c",
+              "background": "#fdf3ff",
+              "secondary-fixed": "#e3c6ff",
+              "on-secondary-fixed": "#4a147e",
+              "inverse-primary": "#bba2fd",
+              "on-tertiary": "#ffeff1",
+              "primary-fixed": "#bba2fd",
+              "on-tertiary-fixed-variant": "#70103a",
+              "surface-variant": "#ebd4ff",
+              "error-container": "#f74b6d",
+              "on-tertiary-fixed": "#380018",
+              "on-secondary-fixed-variant": "#68379d",
+              "secondary": "#7343a9",
+              "surface-tint": "#644da1",
+              "secondary-fixed-dim": "#d9b5ff",
+              "surface-container-low": "#f9ecff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-4 h-16 sticky top-0 z-50 bg-[#fdf3ff] dark:bg-[#1c1b1f] tonal-layering">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Alex Rivera" class="w-full h-full object-cover" data-alt="Close up portrait of Alex Rivera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHeoGEVkiMCnAn9_zXiGTBSweG1sNFQRXiAOSNI8oamCN_IEErhUssJD9uwaeTh34O2y5hWafpnLFPvNklOaPtquQiIBllW2bGfzgLveTo46xowKZva9mGAvI4t102IESTcx7Ulnf_yvrH2UfqS8tEAf0tQP7D0jZ6a5WW5v-eQTzvbBEkimsh-Ym_y6SfPg5qjivut_3P66SRy7_17cL1rnHILpLi5Me1KVj3oaYSXmW0K_jbGGS_50XxkmIMomwYCRDmCPqQal6m"/>
+</div>
+<div class="flex flex-col">
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-lg text-[#6750A4] dark:text-[#d0bcff]">Kinetic Quiz</span>
+<span class="text-[10px] font-medium text-on-surface-variant -mt-1">Creator: Alex Rivera</span>
+</div>
+</div>
+</header>
+<main class="max-w-5xl mx-auto px-6 pt-8 space-y-12">
+<!-- Hero Section: Create New Quiz -->
+<section class="relative group">
+<div class="bg-primary text-on-primary rounded-xl p-8 overflow-hidden relative shadow-[0_20px_50px_rgba(100,77,161,0.15)]">
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div class="max-w-md">
+<span class="text-on-primary/70 font-bold uppercase tracking-widest text-xs mb-3 block">Ready for the next challenge?</span>
+<h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Ignite Curiosity with a New Quiz</h1>
+<p class="text-on-primary/80 text-lg font-medium mb-6">Build interactive exhibits of knowledge in minutes.</p>
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-lg font-bold flex items-center gap-3 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+                            Create New Quiz
+                        </button>
+</div>
+<div class="hidden md:block relative w-64 h-64 bg-primary-container/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-9xl text-on-primary/20">rocket_launch</span>
+</div>
+</div>
+<!-- Abstract tonal circles for texture -->
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -left-16 -bottom-16 w-64 h-64 bg-tertiary-container/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between h-48 border-b-4 border-primary/20">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+<span class="text-primary font-bold text-sm">+12% this week</span>
+</div>
+<div>
+<div class="text-4xl font-extrabold text-on-background">1,284</div>
+<div class="text-on-surface-variant font-medium">Total Players</div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between h-48">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary text-3xl">bolt</span>
+</div>
+<div>
+<div class="text-4xl font-extrabold text-on-background">24</div>
+<div class="text-on-surface-variant font-medium">Active Quizzes</div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between h-48 border-b-4 border-tertiary/20">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary text-3xl">verified</span>
+</div>
+<div>
+<div class="text-4xl font-extrabold text-on-background">98.2%</div>
+<div class="text-on-surface-variant font-medium">Completion Rate</div>
+</div>
+</div>
+</div>
+</section>
+<!-- My Quizzes List -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold text-on-background">My Quizzes</h2>
+<p class="text-on-surface-variant font-medium">Manage and monitor your curated galleries.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1 group">
+                    View Archive
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Quiz Card 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-colors duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Space Exploration" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic satellite orbiting Earth with glowing data streams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9rNRmFzzI488yX_kbINgvwPRQThXnm4qWKfY9VpJXAYbXuSM4lDqQ9QoVU1BOxqpCV1vM0wBbWyKv1sJkhQlS3TvAxs7hrJKfmeTYBCswbIShB64uBNI-wsomxNsXH_XtezUA6taDtGBiT3js_HDAsN4-smhagRzvJUjqZbNXTfWLYmfGXRDR40-f4SJaZ46usguSKqE64fXiaEQZvUtkTbCHBgqnbGs4IeURQaxKYkVxOc6d2LKhb8528YAGGBHGFmyu0fwJOHmk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-6 right-6 flex justify-between items-center">
+<div class="flex gap-2 items-center">
+<span class="bg-primary/90 text-on-primary px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">Science</span>
+<span class="bg-surface-container-lowest/90 text-on-surface px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">15 Questions</span>
+</div>
+<div class="flex gap-1">
+<button aria-label="Edit quiz" class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-lowest/20 text-white hover:bg-surface-container-lowest/40 transition-colors backdrop-blur-sm"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Delete quiz" class="w-8 h-8 flex items-center justify-center rounded-full bg-error/20 text-white hover:bg-error/40 transition-colors backdrop-blur-sm"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-3">Interstellar Frontiers: Mars &amp; Beyond</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">Test your knowledge on the next decade of space travel and Mars colonization efforts.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/15">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary-container"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-secondary-container"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-tertiary-container flex items-center justify-center text-[10px] font-bold">+42</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold active:scale-95 transition-all">Start Quiz</button>
+</div>
+</div>
+</div>
+<!-- Quiz Card 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container transition-colors duration-300">
+<div class="h-56 relative overflow-hidden">
+<img alt="Modern UI Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract minimalist 3D shapes in purple and soft pastel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoa7aKEn3ss7JbMxi_L3aUD0B1Xz63BvclZr5D9mXOBxWYIht3g70hHGE9HwGb-iiWKOi-kVm8WrNGQKdJO1d0z-0q3PJEBSKzcZnFz0ThKy2kumI5kZDU3N7SqfkSZ0RpH5Usdo8hnkcGyZfKbYSsRqwQ8C6kDdCKa4nUY96-RgfCdeDPoFoeLjbZcEULaSvYNX2vare_hFD7XVS-dAU_qasd8Gn5g7nPYAQ-Kgu-jUf1hySAVAHzB-gx4BZrqy3Rq5C6fcsrcdK0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-6 right-6 flex justify-between items-center">
+<div class="flex gap-2 items-center">
+<span class="bg-tertiary/90 text-on-tertiary px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">Design</span>
+<span class="bg-surface-container-lowest/90 text-on-surface px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm">24 Questions</span>
+</div>
+<div class="flex gap-1">
+<button aria-label="Edit quiz" class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-lowest/20 text-white hover:bg-surface-container-lowest/40 transition-colors backdrop-blur-sm"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button aria-label="Delete quiz" class="w-8 h-8 flex items-center justify-center rounded-full bg-error/20 text-white hover:bg-error/40 transition-colors backdrop-blur-sm"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-3">Material 3 Fundamentals</h3>
+<p class="text-on-surface-variant mb-6 line-clamp-2">A comprehensive deep dive into tonal palettes, elevation, and adaptive layouts.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/15">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-secondary-dim"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-dim"></div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-outline-variant flex items-center justify-center text-[10px] font-bold">+8</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold active:scale-95 transition-all">Start Quiz</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-6 bg-[#fdf3ff] dark:bg-[#1c1b1f] rounded-t-[3rem] shadow-[0_-4px_48px_0_rgba(56,38,76,0.06)] border-t border-[#bba4d2]/15">
+<a class="flex flex-col items-center justify-center bg-[#ebd4ff] dark:bg-[#4a4458] text-[#1d192b] dark:text-[#e6e1e5] rounded-full px-5 py-1 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1 hover:bg-[#f9ecff] dark:hover:bg-[#2b2930] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-xs">Quizzes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1 hover:bg-[#f9ecff] dark:hover:bg-[#2b2930] transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] font-medium text-xs">Profile</span>
+</a>
+</nav>
+<!-- Contextual FAB for Creation (Mobile only visible if scrolled) -->
+<button class="md:hidden fixed bottom-24 right-6 w-16 h-16 bg-primary text-on-primary rounded-xl shadow-xl flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

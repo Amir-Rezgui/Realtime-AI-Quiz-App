@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#644da1",
+              "secondary-fixed": "#e3c6ff",
+              "secondary-container": "#e3c6ff",
+              "primary-container": "#bba2fd",
+              "on-tertiary-container": "#640432",
+              "on-secondary": "#faefff",
+              "outline": "#836e99",
+              "on-primary-fixed-variant": "#41297c",
+              "primary-fixed": "#bba2fd",
+              "on-primary-container": "#381e72",
+              "on-background": "#38264c",
+              "on-primary": "#f7f0ff",
+              "tertiary-fixed-dim": "#f67ca4",
+              "on-tertiary-fixed-variant": "#70103a",
+              "secondary": "#7343a9",
+              "on-error": "#ffefef",
+              "primary-dim": "#584194",
+              "primary": "#644da1",
+              "surface-variant": "#ebd4ff",
+              "error": "#b41340",
+              "secondary-fixed-dim": "#d9b5ff",
+              "primary-fixed-dim": "#ad95ef",
+              "surface-container-low": "#f9ecff",
+              "error-container": "#f74b6d",
+              "on-surface-variant": "#67537c",
+              "error-dim": "#a70138",
+              "inverse-primary": "#bba2fd",
+              "background": "#fdf3ff",
+              "tertiary": "#9d365d",
+              "surface-dim": "#e5caff",
+              "on-secondary-fixed": "#4a147e",
+              "on-tertiary": "#ffeff1",
+              "tertiary-fixed": "#ff8eb2",
+              "on-primary-fixed": "#1e0053",
+              "outline-variant": "#bba4d2",
+              "on-error-container": "#510017",
+              "on-secondary-fixed-variant": "#68379d",
+              "surface-container-highest": "#ebd4ff",
+              "tertiary-container": "#ff8eb2",
+              "inverse-on-surface": "#ab94c1",
+              "tertiary-dim": "#8e2951",
+              "secondary-dim": "#67369c",
+              "on-secondary-container": "#5e2d93",
+              "inverse-surface": "#16052a",
+              "on-surface": "#38264c",
+              "surface-bright": "#fdf3ff",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#fdf3ff",
+              "surface-container": "#f3e2ff",
+              "surface-container-high": "#efdbff",
+              "on-tertiary-fixed": "#380018"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fdf3ff;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #644da1 0%, #bba2fd 100%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background-color: rgba(253, 243, 255, 0.6);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#fdf3ff] dark:bg-purple-950 flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-1">
+<button aria-label="Back to dashboard" class="text-[#644da1] dark:text-[#bba2fd] hover:bg-[#ebd4ff] dark:hover:bg-purple-800 transition-colors p-2 rounded-full Active: scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button aria-label="Close" class="text-[#644da1] dark:text-[#bba2fd] hover:bg-[#ebd4ff] dark:hover:bg-purple-800 transition-colors p-2 rounded-full Active: scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<button class="text-[#644da1] dark:text-[#bba2fd] font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:bg-[#ebd4ff] dark:hover:bg-purple-800 transition-colors px-4 py-2 rounded-full Active: scale-95 duration-150 ease-in-out">
+        Pause
+    </button>
+</header>
+<main class="max-w-5xl mx-auto px-6 pt-8 space-y-8">
+<!-- Live Status Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Question & Stats -->
+<div class="md:col-span-8 space-y-8">
+<!-- Question Card -->
+<section class="bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 opacity-10 pointer-events-none translate-x-1/4 -translate-y-1/4">
+<span class="text-[12rem] font-headline font-extrabold leading-none">04</span>
+</div>
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container text-xs font-bold font-label mb-6">QUESTION 4 OF 10</span>
+<h2 class="font-headline font-bold text-3xl md:text-4xl text-on-background leading-tight relative z-10">
+                    Which planet in our solar system is known as the Red Planet?
+                </h2>
+<!-- Visualization: Live Response Bar Chart -->
+<div class="mt-12 space-y-6">
+<!-- Option: Venus -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-semibold px-2">
+<span class="text-on-surface-variant">Venus</span>
+<span class="text-primary">2 players</span>
+</div>
+<div class="h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant opacity-40 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<!-- Option: Mars (High frequency) -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-bold px-2">
+<span class="text-on-surface">Mars</span>
+<span class="text-primary">14 players</span>
+</div>
+<div class="h-6 kinetic-gradient rounded-full shadow-[0_0_12px_rgba(100,77,161,0.2)]">
+<div class="h-full w-full"></div>
+</div>
+</div>
+<!-- Option: Jupiter -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-semibold px-2">
+<span class="text-on-surface-variant">Jupiter</span>
+<span class="text-primary">1 player</span>
+</div>
+<div class="h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant opacity-40 rounded-full" style="width: 8%"></div>
+</div>
+</div>
+<!-- Option: Saturn -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-semibold px-2">
+<span class="text-on-surface-variant">Saturn</span>
+<span class="text-primary">1 player</span>
+</div>
+<div class="h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant opacity-40 rounded-full" style="width: 8%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Status & Progress Info -->
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-1 bg-surface-container-high rounded-lg p-6 flex items-center gap-4">
+<div class="bg-primary-container p-3 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Participation</p>
+<p class="text-xl font-bold text-on-surface">18/24 <span class="text-sm font-normal text-on-surface-variant">have answered</span></p>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-high rounded-lg p-6 flex items-center gap-4">
+<div class="bg-primary-container p-3 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Live Activity</p>
+<p class="text-xl font-bold text-on-surface">75% <span class="text-sm font-normal text-on-surface-variant">Completion</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Timer & Actions -->
+<aside class="md:col-span-4 space-y-8 sticky top-24">
+<!-- Countdown Timer Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 text-center border-none shadow-[0_12px_48px_rgba(56,38,76,0.06)]">
+<p class="text-on-surface-variant font-label text-sm font-bold uppercase tracking-widest mb-2">Time Remaining</p>
+<div class="text-7xl font-headline font-extrabold text-primary mb-6 tabular-nums">15</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full kinetic-gradient w-3/4 shadow-[0_0_8px_rgba(100,77,161,0.3)]"></div>
+</div>
+</div>
+<!-- Primary Controls -->
+<div class="space-y-4">
+<button class="w-full py-6 bg-surface-dim text-on-surface-variant font-headline font-extrabold text-xl rounded-lg cursor-not-allowed transition-all" disabled="">
+                    Next Question
+                </button>
+<button class="w-full py-4 bg-surface-container-high text-primary font-headline font-bold text-lg rounded-lg hover:bg-surface-container-highest transition-all Active: scale-95">
+                    Skip Timer
+                </button>
+</div>
+<!-- Host Note -->
+<div class="p-6 bg-surface-container-low rounded-lg border-l-4 border-primary">
+<p class="text-sm text-on-surface-variant leading-relaxed">
+<span class="font-bold text-on-surface block mb-1">Host Tip:</span>
+                    You can wait for all 24 participants to submit their answers, or manually skip to see results early.
+                </p>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff]/80 dark:bg-[#1a1120]/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-12px_48px_rgba(56,38,76,0.06)]">
+<!-- Quiz Tab (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#efdbff] dark:bg-[#4a345e] text-[#644da1] dark:text-[#ebd4ff] rounded-[2rem] px-5 py-2 transition-all Active: scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="sports_esports" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-['Manrope'] font-medium text-[12px]">Quiz</span>
+</a>
+<!-- Leaderboard Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#a694ba] px-5 py-2 hover:text-[#644da1] dark:hover:text-[#bba2fd] transition-all Active: scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Manrope'] font-medium text-[12px]">Leaderboard</span>
+</a>
+<!-- Chat Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#a694ba] px-5 py-2 hover:text-[#644da1] dark:hover:text-[#bba2fd] transition-all Active: scale-90 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-['Manrope'] font-medium text-[12px]">Chat</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#bba2fd",
+              "surface": "#fdf3ff",
+              "tertiary": "#9d365d",
+              "on-primary-fixed": "#1e0053",
+              "on-primary-fixed-variant": "#41297c",
+              "on-background": "#38264c",
+              "outline-variant": "#bba4d2",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#ebd4ff",
+              "tertiary-fixed-dim": "#f67ca4",
+              "on-surface-variant": "#67537c",
+              "on-error-container": "#510017",
+              "primary-dim": "#584194",
+              "on-error": "#ffefef",
+              "surface-container-high": "#efdbff",
+              "tertiary-fixed": "#ff8eb2",
+              "tertiary-dim": "#8e2951",
+              "inverse-on-surface": "#ab94c1",
+              "inverse-surface": "#16052a",
+              "error-dim": "#a70138",
+              "error": "#b41340",
+              "on-secondary-container": "#5e2d93",
+              "on-tertiary-container": "#640432",
+              "surface-bright": "#fdf3ff",
+              "on-primary": "#f7f0ff",
+              "primary": "#644da1",
+              "on-primary-container": "#381e72",
+              "primary-fixed-dim": "#ad95ef",
+              "outline": "#836e99",
+              "surface-container": "#f3e2ff",
+              "tertiary-container": "#ff8eb2",
+              "secondary-container": "#e3c6ff",
+              "surface-dim": "#e5caff",
+              "on-surface": "#38264c",
+              "on-secondary": "#faefff",
+              "secondary-dim": "#67369c",
+              "background": "#fdf3ff",
+              "secondary-fixed": "#e3c6ff",
+              "on-secondary-fixed": "#4a147e",
+              "inverse-primary": "#bba2fd",
+              "on-tertiary": "#ffeff1",
+              "primary-fixed": "#bba2fd",
+              "on-tertiary-fixed-variant": "#70103a",
+              "surface-variant": "#ebd4ff",
+              "error-container": "#f74b6d",
+              "on-tertiary-fixed": "#380018",
+              "on-secondary-fixed-variant": "#68379d",
+              "secondary": "#7343a9",
+              "surface-tint": "#644da1",
+              "secondary-fixed-dim": "#d9b5ff",
+              "surface-container-low": "#f9ecff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #fdf3ff;
+      }
+      .headline-font {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .custom-podium-gradient {
+        background: linear-gradient(180deg, rgba(187, 162, 253, 0.4) 0%, rgba(187, 162, 253, 0) 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation Bar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-4 h-16 bg-[#fdf3ff] dark:bg-[#1c1b1f] fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User avatar with purple background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlOmevZRrRX0CzzlluvIMMWTYPe1u21vvOBCOlmI5GewTEeJXSJC3OdhTF3FtExVhjfhO0DguSswNPSDfhbv2pOjuJ3LYiywBAxi0xUNSwAn1RvwJIwyjB5L-pRO--zPq-0Lh1mRTVtUlqGG__u1lLwp8WWm7_kvFxDqAmn_laUF0uYDl238pPWBiKiEmGLlUndkaFXqEeVMLRpNtl8uPtDAx1LH6asl_TMFPibJa5QUoBqGVleW_13QLDCRG1lbUzQgSIZb0Rq0JK" style=""/>
+</div>
+<span class="font-['Plus_Jakarta_Sans'] font-bold text-xl text-[#6750A4] dark:text-[#d0bcff] tracking-tight" style="">Kinetic Quiz</span>
+</div>
+</header>
+<main class="flex-grow pt-20 pb-28 px-6 max-w-2xl mx-auto w-full">
+<!-- Section: Leaderboard Podium -->
+<section class="mb-12 pt-4">
+<div class="text-center mb-8">
+<h2 class="headline-font text-3xl font-extrabold text-on-background" style="">Leaderboard</h2>
+<p class="text-on-surface-variant font-medium mt-1" style="">Round 4 of 10 complete</p>
+</div>
+<div class="flex items-end justify-center gap-4 h-64">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center flex-1 max-w-[100px]">
+<div class="relative mb-3">
+<div class="w-16 h-16 rounded-full border-4 border-surface-container-highest overflow-hidden p-1 bg-surface-container">
+<img class="w-full h-full rounded-full bg-white" data-alt="Female avatar for second place" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDOtTJfySUJwsmtGD8FJeTIFyyHaac6YKg1SyU8elcVY9Sus1ZJU-gSN-lRSgPWPQ63nyI6xED9V3kxS2BCnADQAkXh2BdtY7wN61Gl19tSPN-q13zDo-LtdQfuB1vz1JeKngmbPJiZud-R1qDOkMRIf1iAuSgVM4LHFrqoMcTS17FEhYauhr_N5xgRNwueMeZarFdI79BIFEAKck6-mzO6SazgdLkui80nrHPd7DUnV-e0S7TRkYyWyi2X3_FzmKjalLclgmCsRtO" style=""/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest w-6 h-6 rounded-full flex items-center justify-center border-2 border-surface shadow-sm">
+<span class="text-[10px] font-bold text-primary" style="">2</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high rounded-t-xl flex flex-col items-center pt-4 pb-6 px-2 h-24">
+<span class="headline-font font-bold text-xs truncate w-full text-center" style="">Sarah</span>
+<span class="text-[10px] font-semibold text-primary mt-1" style="">2,840</span>
+</div>
+</div>
+<!-- Rank 1 (Winner) -->
+<div class="flex flex-col items-center flex-1 max-w-[120px]">
+<div class="relative mb-4 scale-110">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-primary-container">
+<span class="material-symbols-outlined text-4xl" style='font-variation-settings: "FILL" 1;'>workspace_premium</span>
+</div>
+<div class="w-20 h-20 rounded-full border-4 border-primary-container overflow-hidden p-1 bg-primary-container/20">
+<img class="w-full h-full rounded-full bg-white" data-alt="Male avatar for first place" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB07MEDSKqkCpMVEVA7VwFl0n96v1ghbAGLXFqhPu_dnv49VaOjfGHsuEOdsJY7FJfOiU47EGkalyd3M7U7fimexKscYwGggjI9oPS3Hk2RGr5jSIp1skKObDAUFXlR_0kKWwsFsKqPnNfaG0MlbYcGi-Hr65W0k8V7tJVqanfpATkff5Hh3BglutXRRYOVBZ7OOtYXjaiZD9QQN5LVIA7pTT241C8knmkkTUxVyLUF3wut678Xhk88rkesXwr4-BUTr3GnCM5g-NF8" style=""/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary-container w-8 h-8 rounded-full flex items-center justify-center border-2 border-surface shadow-md">
+<span class="text-xs font-black text-on-primary-container" style="">1</span>
+</div>
+</div>
+<div class="w-full bg-primary-container/30 rounded-t-2xl flex flex-col items-center pt-6 pb-8 px-2 h-36 border-t border-x border-primary-container/20">
+<span class="headline-font font-extrabold text-sm truncate w-full text-center" style="">Marcus</span>
+<span class="text-xs font-black text-primary mt-1" style="">3,120</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center flex-1 max-w-[100px]">
+<div class="relative mb-3">
+<div class="w-16 h-16 rounded-full border-4 border-surface-container-highest overflow-hidden p-1 bg-surface-container">
+<img class="w-full h-full rounded-full bg-white" data-alt="Male avatar for third place" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArcPcH269Q55t6HuateUbLJNY20y7q4YY5ZqitbO-xuHk8ybRpQGzQkbG18rO5bDv7Hsos4I68Cgo35VezbWMYGv8Zoit-R_ERt1X62V4nept-SYnc6i0ru78iD8tCBxZuB-W5I1ClKemoh3Zi_7gyByKeoAD8oPuok0EShKWkkrrpJ-u8owWs2GY5r4u13QqV_wZT_HWbr3UDJVGJKM2KthyzrHcW1lRYEi4dUzSP7PW0USqYpk9FSser4HsJIe5VfDvJAz3bT5KK" style=""/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest w-6 h-6 rounded-full flex items-center justify-center border-2 border-surface shadow-sm">
+<span class="text-[10px] font-bold text-primary" style="">3</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low rounded-t-xl flex flex-col items-center pt-4 pb-4 px-2 h-20">
+<span class="headline-font font-bold text-xs truncate w-full text-center" style="">Leo</span>
+<span class="text-[10px] font-semibold text-primary mt-1" style="">2,610</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Rankings List -->
+<section class="space-y-3">
+<!-- Header for list -->
+<div class="flex justify-between items-center px-4 mb-4">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" style="">Rankings</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant" style="">Points</span>
+</div>
+<!-- List Item 4 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4">
+<span class="headline-font font-bold text-on-surface-variant w-6 text-center" style="">4</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full" data-alt="User avatar for rank four" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWN816d6FGyZ0WlhK_zR8mEHpdYKofPNeP69qANanRoy3YcK_fGv2b9e2EVuGLrkjN4R4h7Hwb8b6ymzy6ZlsbXsScg0QQso5DXjljIPVZqcrTX0Mgy-jYXNEk84FY6qhlD1bcc-AHmeB5g2Z1QHGbdm3lNG0A2MZ-N_iDIZsq1tlrq9P_BhgBOAHdh3gQYrj-mwi3cgqnZ8-nKiFq7GqqVJDe-y5NvLvXP4hM-iF75nNFVrG5Dnw8oOJmU3jxNsR_Xrd3OIeCCg6w" style=""/>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-on-surface" style="">Elena</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary" style='font-variation-settings: "FILL" 1;'>local_fire_department</span>
+<span class="text-[10px] font-bold text-tertiary" style="">3 STREAK</span>
+</div>
+</div>
+<span class="headline-font font-black text-primary" style="">2,450</span>
+</div>
+<!-- List Item 5 -->
+<div class="bg-surface-container-low rounded-xl p-4 flex items-center gap-4">
+<span class="headline-font font-bold text-on-surface-variant w-6 text-center" style="">5</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full" data-alt="User avatar for rank five" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRSbG0VAAcNP5UAHxuey30792D4gOSJ453tLhZk1S4zxnIFXJE7t1RyqdmIRbotrWD_aPdrUS94_TQo_H-eGbdbi-7G-YYK6OZv6r84KKSfsnHhURwF9nK7itDNCwvtyU9QUSMC3c4r-4q1ZEZeoeC92T3NAxsmotTDRbtxO87IzPFGOTILH0cuTiLWI7WXpzlWSI7uR9d71NDw32HMt3iBXEZBADPU0fHafOsO6lebHJksaj0jTZENurqOBZs8m9I0o9BVlrVIJR9" style=""/>
+</div>
+<div class="flex-grow">
+<p class="font-bold text-on-surface" style="">Jordan</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant/40" style='font-variation-settings: "FILL" 0;'>local_fire_department</span>
+<span class="text-[10px] font-bold text-on-surface-variant/40" style="">0 STREAK</span>
+</div>
+</div>
+<span class="headline-font font-black text-primary" style="">2,320</span>
+</div>
+<!-- Spacer/Divider -->
+<div class="flex justify-center py-4">
+<div class="flex gap-2">
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant/30"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant/30"></div>
+</div>
+</div>
+<!-- Current User (Alex) Highlight -->
+<div class="bg-primary text-on-primary rounded-xl p-5 flex items-center gap-4 shadow-xl shadow-primary/20 transform scale-[1.02] border-2 border-primary-fixed-dim/20">
+<span class="headline-font font-black w-6 text-center" style="">42</span>
+<div class="w-12 h-12 rounded-full bg-white/20 p-0.5 ring-2 ring-white/30">
+<img class="w-full h-full rounded-full" data-alt="Alex profile avatar highlighting current user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJEM2a-6BdaSrYVjbwXrpOW5t4mgznqbl2oMoQ7pd7C7JYbX8kOG2P8Gvjriie2OcZfFvtCVQnr-CP09bxTOfgueQtMhvTXg6Omf7KcUuDbZjSpBCofiOhmHSk0ozBXO5qNgnFLX0-jHvbuZAlz0zLtTTyneGYQbU-UkIh2hv-TstznLIR-z9zx6K6KrpsqWvNyv_VsEUFsMFJNZxbBEh5c09L9xURW3FgRRnB9kiAFixIks_v-0falpy_Dt9c1OLegvpcetB8dva4" style=""/>
+</div>
+<div class="flex-grow">
+<p class="headline-font font-extrabold text-lg" style="">Alex (You)</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style='font-variation-settings: "FILL" 1;'>local_fire_department</span>
+<span class="text-xs font-bold uppercase tracking-wide" style="">6 Answer Streak!</span>
+</div>
+</div>
+<div class="text-right">
+<span class="headline-font font-black text-xl" style="">1,140</span>
+<p class="text-[10px] font-bold opacity-80" style="">+150 this round</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Status & Navigation Shell -->
+<div class="fixed bottom-0 left-0 w-full z-50">
+<!-- Progress Indicator -->
+<div class="bg-surface-container-highest px-6 pt-4 pb-2 rounded-t-[3rem] shadow-[0_-4px_48px_0_rgba(56,38,76,0.06)] border-t border-[#bba4d2]/15">
+<div class="max-w-2xl mx-auto">
+<div class="flex justify-between items-center mb-2 px-2">
+<p class="headline-font font-bold text-sm text-primary" style="">Next question start in</p>
+<span class="text-xs font-black text-on-surface-variant" style="">0:08</span>
+</div>
+<!-- Linear Progress Bar -->
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-3/4 shadow-[0_0_8px_rgba(100,77,161,0.3)]"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Shared Component) -->
+<nav class="flex justify-around items-center h-20 pb-safe px-6 bg-[#fdf3ff] dark:bg-[#1c1b1f] pb-6 pt-3 bg-[#ffffff]/80 dark:bg-[#1a1120]/80 backdrop-blur-xl rounded-t-[3rem] shadow-[0_-12px_48px_rgba(56,38,76,0.06)]"><!-- Quiz Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#a694ba] px-5 py-2 hover:text-[#644da1] dark:hover:text-[#bba2fd] transition-all Active: scale-90 duration-300" href="#" style="">
+<span class="material-symbols-outlined" data-icon="quiz" style="">quiz</span>
+<span class="font-['Manrope'] font-medium text-[12px]" style="">Quiz</span>
+</a>
+<!-- Leaderboard Tab (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#efdbff] dark:bg-[#4a345e] text-[#644da1] dark:text-[#ebd4ff] rounded-[2rem] px-5 py-2 transition-all Active: scale-90 duration-300" href="#" style="">
+<span class="material-symbols-outlined" data-icon="bar_chart" style='font-variation-settings: "FILL" 1;'>bar_chart</span>
+<span class="font-['Manrope'] font-medium text-[12px]" style="">Leaderboard</span>
+</a>
+<!-- Chat Tab (Inactive) -->
+<a class="flex flex-col items-center justify-center text-[#836e99] dark:text-[#a694ba] px-5 py-2 hover:text-[#644da1] dark:hover:text-[#bba2fd] transition-all Active: scale-90 duration-300" href="#" style="">
+<span class="material-symbols-outlined" data-icon="forum" style="">forum</span>
+<span class="font-['Manrope'] font-medium text-[12px]" style="">Chat</span>
+</a></nav>
+</div>
+</body></html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz Lobby - Waiting for Host</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#fdf3ff",
+                        "on-secondary-fixed": "#4a147e",
+                        "tertiary-fixed": "#ff8eb2",
+                        "on-primary-container": "#381e72",
+                        "on-tertiary-container": "#640432",
+                        "tertiary-fixed-dim": "#f67ca4",
+                        "outline-variant": "#bba4d2",
+                        "primary-container": "#bba2fd",
+                        "surface-dim": "#e5caff",
+                        "error": "#b41340",
+                        "secondary-dim": "#67369c",
+                        "secondary-container": "#e3c6ff",
+                        "surface": "#fdf3ff",
+                        "primary-fixed-dim": "#ad95ef",
+                        "on-tertiary-fixed": "#380018",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffeff1",
+                        "surface-variant": "#ebd4ff",
+                        "error-container": "#f74b6d",
+                        "on-background": "#38264c",
+                        "surface-tint": "#644da1",
+                        "surface-container-high": "#efdbff",
+                        "secondary-fixed-dim": "#d9b5ff",
+                        "primary-dim": "#584194",
+                        "on-error": "#ffefef",
+                        "secondary-fixed": "#e3c6ff",
+                        "on-primary-fixed-variant": "#41297c",
+                        "on-surface-variant": "#67537c",
+                        "outline": "#836e99",
+                        "inverse-primary": "#bba2fd",
+                        "primary-fixed": "#bba2fd",
+                        "inverse-surface": "#16052a",
+                        "on-primary": "#f7f0ff",
+                        "on-secondary": "#faefff",
+                        "surface-container-highest": "#ebd4ff",
+                        "on-primary-fixed": "#1e0053",
+                        "on-secondary-container": "#5e2d93",
+                        "secondary": "#7343a9",
+                        "tertiary-container": "#ff8eb2",
+                        "tertiary": "#9d365d",
+                        "on-error-container": "#510017",
+                        "inverse-on-surface": "#ab94c1",
+                        "surface-container": "#f3e2ff",
+                        "error-dim": "#a70138",
+                        "surface-bright": "#fdf3ff",
+                        "on-tertiary-fixed-variant": "#70103a",
+                        "on-surface": "#38264c",
+                        "on-secondary-fixed-variant": "#68379d",
+                        "surface-container-low": "#f9ecff",
+                        "primary": "#644da1",
+                        "tertiary-dim": "#8e2951"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-ring {
+            animation: rotate 2s linear infinite;
+        }
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 flex justify-between items-center w-full px-6 py-4 bg-[#fdf3ff] dark:bg-slate-950">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#644da1] dark:text-[#bba2fd] text-2xl" data-icon="videogame_asset">videogame_asset</span>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold text-2xl tracking-tight text-[#644da1] dark:text-[#bba2fd]">Quiz Lobby</h1>
+</div>
+<div class="flex items-center gap-4">
+</div>
+</header>
+<main class="flex-1 w-full max-w-5xl mx-auto px-6 pt-28">
+<!-- Hero Section: Waiting State -->
+<section class="mb-12 text-center flex flex-col items-center">
+<div class="relative w-48 h-48 mb-8 flex items-center justify-center">
+<!-- Circular Progress Background -->
+<svg class="absolute inset-0 w-full h-full text-surface-container-highest" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="8"></circle>
+</svg>
+<!-- Animated Progress Ring -->
+<svg class="absolute inset-0 w-full h-full text-primary progress-ring" style="transform: rotate(-90deg);" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-dasharray="283" stroke-dashoffset="210" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<!-- Question Mark Icon -->
+<div class="bg-primary text-on-primary w-24 h-24 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-5xl" data-icon="hourglass_empty">hourglass_empty</span>
+</div>
+</div>
+<h2 class="font-headline text-4xl font-extrabold text-on-background mb-3">Waiting for Host</h2>
+<p class="text-on-surface-variant max-w-md mx-auto">Hang tight! The quiz will begin as soon as the host hits the start button.</p>
+</section>
+<!-- User Confirmation Card (The 'You are in!' Section) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-8 flex flex-col items-center text-center shadow-sm relative overflow-hidden">
+<!-- Decorative background elements -->
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full"></div>
+<div class="relative mb-6">
+<img alt="User Avatar" class="w-32 h-32 rounded-full ring-4 ring-primary-container" data-alt="Cartoon avatar of a smiling young person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC6fldWOPyD5hS-Sa8e5dFubrioLh0_mg2EHrZuy4ydvbY_oa25m-V5CFAmufM3iW7VQAszUS-yrh8cjNmzingmyiPW60lVZfYnqAnwt9cnQWvDBvcFF0QsnHBLjuE5LiSkK1_heUD2ZTbrtrtPe-WKfKQiGyn6jZDJMQhl4BI0Wq8KpozQDVGbVgsPnoFKYNjYjerQqRj2LE01AzQr2LQVyr_afnNzsRYpxoOWbmHdx7UD9j4_v9zwZBtqXEx3DXp8mjnh7fux3vd"/>
+<div class="absolute bottom-0 right-0 bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center border-4 border-surface-container-low">
+<span class="material-symbols-outlined text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-primary font-bold mb-1">Confirmed</span>
+<h3 class="font-headline text-2xl font-bold text-on-background mb-4">You are in!</h3>
+<div class="bg-surface-container-highest px-6 py-2 rounded-full inline-block">
+<span class="font-headline text-lg font-bold text-on-primary-container">PixelPioneer</span>
+</div>
+</div>
+<!-- Player Lobby Grid -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-[0_12px_48px_rgba(56,38,76,0.06)] min-h-[400px]">
+<div class="flex justify-between items-center mb-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="groups">groups</span>
+<h4 class="font-headline text-xl font-bold">12 Players Joined</h4>
+</div>
+<div class="flex -space-x-3 overflow-hidden">
+<img alt="Player 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" data-alt="Small circular avatar of a quiz participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmpM8CMAj82upZ0pGPvibzqUztMBlglSKESJSrS7hUUgO_ELqO7vixT-fsW2utQ_dNhVWXkCmZrzxq_vLnm7re68Q7QknBi_l8RMt6VxQY71jf00qoUdt2e0O7vMuo61eQCbETkKRE_7zkVW8jjWTmr1Olu1r0VWkmXFQ1HyTlogmGMBbT3DyX2IleM-XyxHpvZnUpyb_aTZXBtETb8b7lxvITVJ5iWfqjDTG0ks1-KFZyULiWSjQBbGHq6dlTc8XS1gKgBsHEofwB"/>
+<img alt="Player 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" data-alt="Small circular avatar of a quiz participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_HANa5jJJA8Yq1oL3i1pwuMNiyEKnuWTNGEd39KymKJgzJ0ymEVeUyXDARxoTG7DJuc5Xlsr932rTFMSeKIZwm6Y_Ia_tSEzhl_tpEoOBPGbL_uMsVuc-KmciKCYZzuEFiHNHxLCbB2SCUYlXLBJMpzq2oJuM9FoUtgYSJ8cLtY5ojo8RruHIWYkk2XjOKhzMz315XPk9KqzE0azF8M_EzKxGsFNH1XHKRzXT1yMTFYh9KAhRNSK24_20PSZ9QAZcJhJyAvAILwoF"/>
+<img alt="Player 3" class="inline-block h-8 w-8 rounded-full ring-2 ring-white" data-alt="Small circular avatar of a quiz participant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChegoPbpO2qSfIzprfoAPxprfkSzSATd6bVx09-s0Yr9aC0EcHGIkvfpjJZ7K_dz2aJsDGtv7yJQ_gHc7H-IMaGdUwGILrg3DkjO9Lq6wFqFReGieyTp7YNI2YHBd4ZkT8GoyyQIcT6qtdFODibJMM99cwNdLhuEvyD5eRuSGrbBw0OxQ7oxXGSyerN_xv3G8fllZJ5yZwHIxJ9gxQtHV2IoghmjhstpIbjktmxqhs3q09W4FEB8Q9w9UvJ2X5b3jSEirPOiy5gKdR"/>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-surface-container-highest ring-2 ring-white">
+<span class="text-[10px] font-bold">+9</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+<!-- Participant Cards -->
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Jordan" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Jordan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP7Wb1TtVryMgYJvsyW2cy6Bn1rfRcCXLwsFzQpKe1qqMVoqo6ijcv-U0XMfGmdDKt0wu6dV0zRH270qW8M2JgXF2rNjWu3S-tEU260FQ6uucoiTnvTwYeJC4OIdjMQ8oHZUtW5lEgCXQK-YUmfvjDbCuaHZpD-eJEbQTghwuc9skxF7fmIyWiG1Cp8JIsyRvfqW21PMH-p95n3paq3hYc9TJXyQuO4ARtIp6fm80ma9Dc7kixcmmUDPAltlPc9ZQPvOTsmk2NYjHV"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">Jordan_99</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Sarah" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Sarah" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxMEvckQOUqQzaj-YqZyYfVnAgbf21B4Zy4J5FBFiSjTgBdTl-f51Ou37wWlNiyHf1gWD9emZCwDNMCPqbQpkiGndMTwLGUq0g2eDqRvWMNYNJsQfA2VK0tzXpPeHm8KTnEkdvotIczlF1TgWdJjhB0560vOYA-d5V1-nz14-a7EuzHm8uQT0F4Eqx1Dd1rU31T4BqEcCLtCTWY-ohMle_g542r-FuqJnrvhqyOYvPR3iKzn-L0Y-enH4L3-1WCy8i0Ub3TCi-8wuJ"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">Sarah_Q</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Blake" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Blake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpJzbgbixR4c7uPo0bTGbvXOP4BudnFeVkhZtpPA8RklmRWQE5g-uhjtJwDw6bAPKQNvKRvvkAYDZxLiHSkXjWPf6xtzvJvjLdQv20PoCtrU5TJG2JIzpCIfFkY35nKydhle-4RTZnGXwBN7W3wR2O8S7quU6GvtXcIzifGooTxFl5qHPA3zIxmIjvAEAxWRrl2-WAwTjwEP0hHdqzJk6Om3yg3l-LOf3kwUPQIDu9HlH_jtroD1mFhOuLddK5GdNmf3Zs--mn18A2"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">CaptainB</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Mia" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Mia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaqluiondvKmAbRQ_-qDimLOpBlYKkJUr6eBP2IFYGqplAe_Yp4sCWqhxkB2ItoaHCCUPrMLmJkET7BDlJilUal2X7oaHjLp1LJE380SOjzQydf60F63IewCvHkTuoiP5PGTwBpfLOtImK9rO94qlbebjaJJkiJCE7i2lGdmQzi58ievsH9l6mBMuYNW74zGx0Ih5xg8anhM-YkVXjrfTvtX2_5t9t-a3Y_sh1ejylQ7MhEipjKaFHTJKNV3ZMkMYx1Z17j-oGCfNC"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">MiaBrains</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Dev" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Dev" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5IWjeMcErHKqlxW_ZVzjeseOTAlE8PWHvKyYy5A1-_I6dGvIPsuIFmEObI2x4J2i5LQph-5pfm3qXx3Wpo9dmhsVR7Rz3YCt45Faq_jz4JiFxkBsTj1Ult2gXrwSpOW13M0lYy3Q6i49Z2azgQjMrEcNfaKlHaK9EFGUcp6VH36Wf_wuUMjepK0MpkcEwgLHPIdCid3wJNHpmJ7TTXgj1hhQIRg1Vd9iFvOkxC1nhO6AiTyXfATAgJmfw3Jrp4KuX5B4UJjE02_0R"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">CodeMaster</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Lily" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Lily" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw-h394plL2ZeePW4xhAbYPRFQIczRboiIv_2ZIB4NbpVprjSneMM1gR38u9vNetRouLrWvfkhJQGZaUW0_pbmZLGp6Mbj6yugHaBgGM861Jtto-HBWJR32nRCPiFxvkr7kT2ErCwNfZO2_7GmWUUO7RTLzY5XniKSdu-AhE6bgINlUpKfyztUVKqs3gqKSXpe4XIPwrBykHOt7uCzAzZphCQT0tom0b6ZAxizfUAqhD5gvowbCjeTVzplHGuvHQbyCa4257hUVUwR"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">LilQuiz</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-lg bg-surface-container-low border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+<img alt="Ryan" class="w-16 h-16 rounded-full mb-3 group-hover:scale-105 transition-transform" data-alt="Avatar for player named Ryan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7kuu97rB7ChLYQLpX60GLEbEnAhPPUM165y1cafEtYV1CMCsFxAPUfa9UltL_W0GPeB51gaxP3evmxd_UhCQZrrz-H829RpTauYgx--xC3F-CjFEyH2K9L6s2eMO4_j3OCRu253BicYkbGsNMNKnhbtqgewXX_8Iqs6vr6N2H3czwVAzkWU0AhqhVYTryApkWa_JtMuPzemM-WTg4pg_bGLT5Ff12PyOcYXIvNdhtKUrRKxp8qQ_Lmwz7xZ2lf_nnBTn4O_nHQZkl"/>
+<span class="font-body font-medium text-sm text-on-surface truncate w-full text-center">Ryno_01</span>
+</div>
+<!-- Empty slot animation -->
+<div class="flex flex-col items-center justify-center p-4 rounded-lg border-2 border-dashed border-outline-variant/30 animate-pulse bg-surface/50">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest mb-3 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="person_add">person_add</span>
+</div>
+<div class="h-2 w-12 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Fun Fact Placeholder to keep user engaged -->
+<div class="mt-12 bg-primary/5 rounded-lg p-6 border border-primary/10">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary-dim" data-icon="lightbulb">lightbulb</span>
+<div>
+<p class="font-label text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Pro Tip</p>
+<p class="text-sm text-on-surface">Did you know? Answering questions faster gives you more points in the Blitz rounds!</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#ffffff]/60 dark:bg-slate-950/60 backdrop-blur-xl border-t border-[#bba4d2]/15 shadow-[0_-12px_48px_rgba(56,38,76,0.06)] rounded-t-[3rem]">
+<!-- Active Item: Lobby -->
+<a class="flex flex-col items-center justify-center bg-[#ebd4ff] dark:bg-[#644da1]/30 text-[#644da1] dark:text-[#ebd4ff] rounded-[2rem] px-6 py-2 active:scale-90 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Lobby</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#38264c] dark:text-slate-400 opacity-70 hover:opacity-100 active:scale-90 transition-transform duration-300 relative" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-['Manrope'] font-medium text-[10px] uppercase tracking-widest mt-1">Chat</span>
+<!-- Notification badge -->
+<span class="absolute top-0 right-3 w-2 h-2 bg-error rounded-full"></span>
+</a>
+</nav>
+</body></html>
